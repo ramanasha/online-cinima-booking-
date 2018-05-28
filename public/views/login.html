@@ -1,0 +1,67 @@
+<!--div class="container jumbotron text-center wow fadeInUp" data-wow-delay="0.5s">
+    <h1>LOGIN</h1>
+    <p>{{ tagline }}</p>
+</div-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-11 align-self-center">
+      <div class="card">
+        <div class="card-block test-xs-center">
+          <center>
+            <span style="padding-right: 1cm;"><a href="/home" style="color:#FF4081; font-size: 130%;"><i class="fa fa-ticket" style="padding-right: 0.2cm; font-size: 130%;"></i>BOOK MY SHOW</a></span>
+            <span ng-show="adminCity" style="padding-right: 1cm;"><a href="/city"><i class="fa fa-map-marker" style="padding-right: 0.2cm;"></i>City</a></span>
+            <span ng-show="adminMovies" style="padding-right: 1cm;"><a href="/movies"><i class="fa fa-film" style="padding-right: 0.2cm;"></i>Movies</a></span>
+            <span ng-show="adminTheatre" style="padding-right: 1cm;"><a href="/theatre"><i class="fa fa-film" style="padding-right: 0.2cm;"></i>Theatre</a></span>
+            <span ng-show="adminShowtime" style="padding-right: 1cm;"><a href="/showtime"><i class="fa fa-clock-o" style="padding-right: 0.2cm;"></i>Showtime</a></span>
+            <span ng-show="adminBooking" style="padding-right: 1cm;"><a href="/booking"><i class="fa fa-book" style="padding-right: 0.2cm;"></i>Bookings</a></span>
+            <span ng-show="adminAssign" style="padding-right: 1cm;"><a href="/assign"><i class="fa fa-pencil" style="padding-right: 0.2cm;"></i>Assign</a></span>
+          </center>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1 align-self-center">
+      <div class="card">
+        <div class="card-block test-xs-center waves-effect" ng-click="logoutUser()">
+          <center><i class="fa fa-power-off"></i></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container text-center jumbotron wow fadeInUp" ng-show="signInContainer">
+  <center>
+    <h2>Sign In</h2>
+    {{data}}
+    <hr>
+    <input ng-model="user.email" type="text" placeholder="Enter Email ID" autofocus>
+    <input ng-model="user.password" type="password" placeholder="Password">
+    <style type="text/css">
+        input {text-align: center}
+    </style>
+    <br><br>
+    <button ng-click="signInUser(user)" class="btn btn-mdb waves-effect">Log In</button>
+    <button ng-click="signUpShow()" class="btn btn-mdb waves-effect">Not a User? Sign Up</button>
+    <br><hr>
+    <button ng-click="showCookieInfo()" class="btn btn-primary waves-effect">Show Cookie Info</button>
+    <button ng-click="deleteCookieInfo()" class="btn btn-danger waves-effect">Delete Cookie Info</button>
+  </center>
+</div>
+
+<div class="container text-center jumbotron wow fadeInUp" ng-show="signUpContainer">
+  <center>
+    <h2>Sign Up</h2>
+    <hr>
+    <input ng-model="user.email" type="text" placeholder="Enter Email ID" autofocus>
+    <input ng-model="user.password" type="password" placeholder="Password">
+    <input ng-model="user.repeatPassword" type="password" placeholder="Repeat Password">
+  	<style type="text/css">
+        input {text-align: center}
+    </style>
+  	<br><br>
+    <button ng-click="signUpUser(user)" class="btn btn-mdb waves-effect">Sign Up</button>
+    <button ng-click="goBack()" class="btn btn-danger waves-effect">Back</button>
+  </center>
+</div>

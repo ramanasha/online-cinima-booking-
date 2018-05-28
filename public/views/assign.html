@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-11 align-self-center">
+      <div class="card">
+        <div class="card-block test-xs-center">
+          <center>
+            <span style="padding-right: 1cm;"><a href="/home" style="color:#FF4081; font-size: 130%;"><i class="fa fa-ticket" style="padding-right: 0.2cm; font-size: 130%;"></i>BOOK MY SHOW</a></span>
+            <span ng-show="adminCity" style="padding-right: 1cm;"><a href="/city"><i class="fa fa-map-marker" style="padding-right: 0.2cm;"></i>City</a></span>
+            <span ng-show="adminMovies" style="padding-right: 1cm;"><a href="/movies"><i class="fa fa-film" style="padding-right: 0.2cm;"></i>Movies</a></span>
+            <span ng-show="adminTheatre" style="padding-right: 1cm;"><a href="/theatre"><i class="fa fa-film" style="padding-right: 0.2cm;"></i>Theatre</a></span>
+            <span ng-show="adminShowtime" style="padding-right: 1cm;"><a href="/showtime"><i class="fa fa-clock-o" style="padding-right: 0.2cm;"></i>Showtime</a></span>
+            <span ng-show="adminBooking" style="padding-right: 1cm;"><a href="/booking"><i class="fa fa-book" style="padding-right: 0.2cm;"></i>Bookings</a></span>
+            <span ng-show="adminAssign" style="padding-right: 1cm;"><a href="/assign"><i class="fa fa-pencil" style="padding-right: 0.2cm;"></i>Assign</a></span>
+          </center>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1 align-self-center">
+      <div class="card">
+        <div class="card-block test-xs-center waves-effect" ng-click="logoutUser()">
+          <center><i class="fa fa-power-off"></i></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+<div class="container jumbotron text-center wow fadeInUp" data-wow-delay="0.5s">
+    <h1>Create Shows</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div class="nostyle">
+        <center>
+
+                  <label>Select City</label>
+                  <select class="form-control" ng-model="assign.cityName" ng-change="selectCity(assign)" >
+                   <option ng-repeat="city in cityList" ng-value="city.cityName" value="ng-value" >
+                       {{city.cityName}}
+                   </option>
+                  </select>
+
+
+
+                  <label>Select Theatre</label>
+                  <select class="form-control" ng-model="assign.theatreName" ng-change="selectTheatre(assign)" >
+                       <option ng-repeat="theatreList in returnValue1" ng-value ="theatreList.theatreName">
+                           {{theatreList.theatreName}}
+                       </option>
+                  </select>
+
+                  <label>Select Show Time</label>
+                  <select class="form-control" ng-model="assign.showTime" ng-change="selectshowTime(assign)" >
+                       <option ng-repeat="showtimeList in returnTimings" ng-value ="showtimeList.showTimings">
+                           {{showtimeList.showTimings}}
+                       </option>
+                  </select>
+
+                  <label>Select Movie</label>
+                  <select class="form-control" ng-model="assign.movieTitle">
+                       <option ng-repeat="movieList in moviList" ng-value ="movieList.moviTitle">
+                           {{movieList.moviTitle}}
+                       </option>
+                  </select>
+
+                  <label>Release Date</label>
+                  <input type="date" ng-model="assign.fromDate" placeholder="yyyy-MM-dd" required />
+
+                  <label>End Date</label>
+                  <input type="date" ng-model="assign.toDate" placeholder="yyyy-MM-dd" required />
+
+                  <br />
+
+                    <button type="button" ng-click="addAssign(assign)" class="btn btn-outline-success waves-effect">Add</button>
+                    <button ng-click="updateAssign(assign)" class="btn btn-outline-primary waves-effect">Update</button>
+
+              <hr />
+
+            <table class="table table-inverse">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Theatre</th>
+                        <th>Show Time</th>
+                        <th>Movie</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Operations</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="assign in assignList">
+
+                        <td>{{assign.cityName}}</td>
+                        <td>{{assign.theatreName}}</td>
+                        <td>{{assign.showTime}}</td>
+                        <td>{{assign.movieTitle}}</td>
+                        <td>{{assign.fromDate}}</td>
+                        <td>{{assign.toDate}}</td>
+                        <td><button ng-click="removeAssign(assign)" class="btn btn-danger waves-effect">Remove</button></td>
+                        <td><button ng-click="editAssign(assign)" class="btn btn-primary waves-effect">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+</div>

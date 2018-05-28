@@ -1,0 +1,18 @@
+body { padding-top:30px; }
+
+padr { padding-right: 20px; }
+
+.myoverlay {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    ),
+    /* bottom, image */
+    url(image.jpg);
+}
+
+.padbelow { padding-bottom: 25px; }
+
+.footerpad { padding-top: 15px; padding-bottom: 1px;}

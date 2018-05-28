@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Movie Booking System</title>
+
+    <!-- Angular Material CSS now available via Google CDN; version 0.9.4 used here -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+    <!-- CSS -->
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- custom styles -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/LoginCtrl.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/services/NerdService.js"></script>
+    <script src="js/controllers/MovieCtrl.js"></script>
+    <script src="js/controllers/AssignCtrl.js"></script>
+    <script src="js/controllers/cityctrl.js"></script>
+    <script src="js/controllers/showtimeCtrl.js"></script>
+    <script src="js/controllers/BookCtrl.js"></script>
+    <script src="js/controllers/theatrectrl.js"></script>
+    <script src="js/services/GeekService.js"></script>
+    <script src="js/appRoutes.js"></script>
+
+</head>
+
+<body ng-app="sampleApp" style="background-color: #eaeaea;">
+
+    <!-- Angular Material Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.9.4 used here -->
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-md-11 align-self-center">
+          <div class="card">
+            <div class="card-block test-xs-center">
+              <center>
+                <span style="padding-right: 1cm;"><a href="/home" style="color:#FF4081; font-size: 130%;"><i class="fa fa-ticket" style="padding-right: 0.2cm; font-size: 130%;"></i>BOOK MY SHOW</a></span>
+                <span style="padding-right: 1cm;"><a href="/city"><i class="fa fa-map-marker" style="padding-right: 0.2cm;"></i>City</a></span>
+                <span style="padding-right: 1cm;"><a href="/movies"><i class="fa fa-film" style="padding-right: 0.2cm;"></i>Movies</a></span>
+                <span style="padding-right: 1cm;"><a href="/theatre"><i class="fa fa-film" style="padding-right: 0.2cm;"></i>Theatre</a></span>
+                <span style="padding-right: 1cm;"><a href="/showtime"><i class="fa fa-clock-o" style="padding-right: 0.2cm;"></i>Showtime</a></span>
+                <span style="padding-right: 1cm;"><a href="/booking"><i class="fa fa-book" style="padding-right: 0.2cm;"></i>Bookings</a></span>
+                <span style="padding-right: 1cm;"><a href="/assign"><i class="fa fa-pencil" style="padding-right: 0.2cm;"></i>Assign</a></span>
+              </center>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1 align-self-center">
+          <div class="card">
+            <div class="card-block test-xs-center waves-effect">
+              <center><button ng-click="logoutUser()"><i class="fa fa-power-off"></i></button></center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <br>
+        <!-- ANGULAR DYNAMIC CONTENT -->
+        <div ng-view></div>
+
+  <!--div class="footer footerpad" style="background-color: #00BBD3; color: white;">
+    <center><p>Powered by MEAN STACK</p></center>
+  </div-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/mdb/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/mdb/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/mdb/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb/mdb.min.js"></script>
+
+    <script>
+      // Material Select Initialization
+      $(document).ready(function() {
+       $('.mdb-select').material_select();
+      });
+      $('.carousel').carousel();
+      new WOW().init();
+    </script>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDG7tJABqCFWl9HP-WihfBgfVHvFq3NpgQ",
+        authDomain: "bms-niit.firebaseapp.com",
+        databaseURL: "https://bms-niit.firebaseio.com",
+        storageBucket: "bms-niit.appspot.com",
+        messagingSenderId: "657217118105"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </body>
+</html>
